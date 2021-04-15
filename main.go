@@ -1,8 +1,15 @@
 package main
 
-import "github.com/rs/zerolog/log"
+import "fmt"
 
 func main() {
-	log.Info().Msg("Start run ... ")
-
+	fmt.Println("Hello Get BuGuai !!!")
+	fmt.Println("----------------")
+	err := Clean()
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+	fmt.Println("----------------")
+	fmt.Println("Clean over ...")
 }
