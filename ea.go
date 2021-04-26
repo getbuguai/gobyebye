@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/fs"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -70,7 +71,7 @@ func cleanConfigEval(path string) error {
 		return err
 	}
 
-	fmt.Println("-", path)
+	log.Println("-", path)
 
 	return nil
 }

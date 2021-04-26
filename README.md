@@ -12,4 +12,8 @@ mv $GOBIN/gobyebye $GOBIN/gobyby
 # 运行
 gobyby
 
+# 或者
+git clone https://github.com/getbuguai/gobyebye.git
+cd ./gobyebye && make build
+
 ```

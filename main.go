@@ -1,15 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+	"io/ioutil"
+	"log"
+)
+
+var (
+	show bool
+)
+
+func init() {
+	flag.BoolVar(&show, "show", false, "display deleted files .")
+}
 
 func main() {
+	flag.Parse()
+
+	log.SetFlags(0)
+	if !show {
+		log.SetOutput(ioutil.Discard)
+	}
+
 	fmt.Println("Hello Get BuGuai !!!")
-	fmt.Println("----------------")
+
+	log.Println("----------------")
 	err := Clean()
 	if err != nil {
 		fmt.Println(err.Error())
 		return
 	}
-	fmt.Println("----------------")
-	fmt.Println("Clean over ...")
+
+	log.Println("----------------")
+	log.Println("Clean over ...")
 }
